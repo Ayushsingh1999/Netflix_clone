@@ -75,18 +75,20 @@ const Home = () => {
         fetchTopRated();
     }, []);
 
+    const a = Math.Floor(Math.random()*20);
+
     return (
         <section className="home">
             <div
                 className="banner"
                 style={{
-                    backgroundImage: popularMovies[1]
-                        ? `url(${`${imgUrl}/${popularMovies[0].poster_path}`})`
+                    backgroundImage: popularMovies[(a+1)]
+                        ? `url(${`${imgUrl}/${popularMovies[a].poster_path}`})`
                         : "rgb(16, 16, 16)",
                 }}
             >
-                {popularMovies[0] && <h1>{popularMovies[0].original_title}</h1>}
-                {popularMovies[0] && <p>{popularMovies[0].overview}</p>}
+                {popularMovies[a] && <h1>{popularMovies[a].original_title}</h1>}
+                {popularMovies[a] && <p>{popularMovies[a].overview}</p>}
 
                 <div>
                     <button><BiPlay /> Play  </button>
